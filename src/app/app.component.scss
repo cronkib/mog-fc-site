@@ -1,14 +1,33 @@
+.app-topbar-title {
+	color: #ebc46a; 
+}
+
 .mog-brackets {
 	color: #ebc46a; 
 }
 
+.mog-tagname {
+	color: #fff;
+}
+
 .jumbotron {
 	background-color: transparent;
+	border-bottom: 2px solid #ebc46a;
+	margin-bottom: 0px;
+	background-image: url("../assets/images/sketch-t.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
 }
 
-.mog-img {
+.server-name {
+	color: #fff;
 }
 
-.album {
-	background-color: orange;
+.description {
+	padding-top: 2em;
+}
+
+.card-text {
+	font-weight: bold;
 }
