@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FreeCompanyService } from './service/free-company.service';
-import { FreeCompany } from './model/FreeCompany';
+import { FreeCompanyService } from '../service/free-company.service';
+import { FreeCompany } from '../model/FreeCompany';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
 	title = 'Moments of Genius';
 	freeCompany: FreeCompany;
 
-	constructor(private freecompanyService: FreeCompanyService) { 
+	constructor(private freecompanyService: FreeCompanyService) {
 		this.freeCompany = new FreeCompany();
 	}
 
@@ -19,6 +19,6 @@ export class AppComponent implements OnInit {
 		this.freecompanyService.fetchFreeCompanyData();
 		this.freecompanyService.getFreeCompanyData().subscribe((company: FreeCompany) => {
 			this.freeCompany = company;
-		})
+		});
 	}
 }

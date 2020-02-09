@@ -2,6 +2,14 @@
 	color: #ebc46a; 
 }
 
+.app-topbar-title .nav-link {
+	color: #ebc46a !important; 
+}
+
+.app-topbar-title .nav-link:hover {
+	color: #f5e1b4 !important; 
+}
+
 .mog-brackets {
 	color: #ebc46a; 
 }
@@ -10,24 +18,6 @@
 	color: #fff;
 }
 
-.jumbotron {
-	background-color: transparent;
-	border-bottom: 2px solid #ebc46a;
-	margin-bottom: 0px;
-	background-image: url("../assets/images/sketch-t.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: top;
-}
-
 .server-name {
 	color: #fff;
-}
-
-.description {
-	padding-top: 2em;
-}
-
-.card-text {
-	font-weight: bold;
 }

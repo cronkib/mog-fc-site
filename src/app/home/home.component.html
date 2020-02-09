@@ -1,0 +1,151 @@
+<div class="container-flex jumbo-content-area">
+	<section class="jumbotron text-center">
+		<div class="container">
+			<h1 class="jumbotron-heading">{{ freeCompany.name || 'Moments of Genius' }}</h1>
+			<p class="lead text-muted description">We are a friendly, helpful and social Free Company for Final Fantasy
+				XIV located on the Behemoth server. To us, this game is about the people that you share your journey
+				with. We are chill people who are always down to clown all types of content and always have events
+				going. Raiding, mount farming, trivia nights, beach parties, we got you. No matter the week, there is
+				always something going on within MOG. Overall, together we strive to spread positivity throughout the
+				community and help each other grow.</p>
+		</div>
+	</section>
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/8.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Friends
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/2.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Journey
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/3.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Community
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/4.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Together
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/5.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Social
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/6.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Relax
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/7.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Growth
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/1.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Excellence
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/images/screenshots/9.png" />
+						<div class="card-body">
+							<p class="card-text text-center">
+								Representative
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-flex estate-info">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Focus</h3>
+				<ul class="list-group">
+					<li *ngFor="let r of freeCompany.focus" class="list-group-item">
+						<img src='{{ r.icon }}' /> &nbsp; {{ r.name }}
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h3>Seeking</h3>
+				<ul class="list-group">
+					<li *ngFor="let r of freeCompany.seeking" class="list-group-item">
+						<img src='{{ r.icon }}' /> &nbsp; {{ r.name }}
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h3>Estate</h3>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="estate-name">{{ freeCompany.estate?.name || '' }}</span> <br /> <br />
+						<span class="estate-greeting">{{ freeCompany.estate?.greeting || '' }}</span> <br /> <br />
+						<span class="estate-plot">{{ freeCompany.estate?.plot || '' }}</span>
+					</li>
+				</ul>
+				<h3 class='recruitment-title'>Recruitment</h3>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span class="recruitment text-align">{{ freeCompany.recruitment }}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

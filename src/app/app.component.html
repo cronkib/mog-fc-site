@@ -5,24 +5,27 @@
 	</button>
 
 	<div class="container">
-		<img src="assets/images/mog-crest.png" width="48" height="48"/>
+		<img src="assets/images/mog-crest.png" width="48" height="48" />
 		<span class="navbar-brand app-topbar-title">
-			Final Fantasy XIV
+			<a class="nav-link" routerLink="/home" routerLinkActive="active"><span
+							class="app-topbar-text">Final Fantasy XIV</span></a>
 		</span>
 
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item active app-topbar-navitem">
-					<a class="nav-link" routerLink="/" routerLinkActive="active"><span class="app-topbar-text">Home</span></a>
+						</li>
+				<li class="nav-item app-topbar-navitem">
+					<a class="nav-link" routerLink="/members" routerLinkActive="active"><span
+							class="app-topbar-text">Members</span></a>
 				</li>
 				<li class="nav-item app-topbar-navitem">
-					<a class="nav-link" routerLink="/members" routerLinkActive="active"><span class="app-topbar-text">Members</span></a>
+					<a class="nav-link" routerLink="/events" routerLinkActive="active"><span
+							class="app-topbar-text">Events</span></a>
 				</li>
 				<li class="nav-item app-topbar-navitem">
-					<a class="nav-link" routerLink="/members" routerLinkActive="active"><span class="app-topbar-text">Events</span></a>
-				</li>
-				<li class="nav-item app-topbar-navitem">
-					<a class="nav-link" routerLink="/resources" routerLinkActive="active"><span class="app-topbar-text">Resources</span></a>
+					<a class="nav-link" routerLink="/resources" routerLinkActive="active"><span
+							class="app-topbar-text">Resources</span></a>
 				</li>
 			</ul>
 		</div>
@@ -36,111 +39,4 @@
 	</div>
 </nav>
 
-<div class="container-flex">
-	<section class="jumbotron text-center">
-		<div class="container">
-			<h1 class="jumbotron-heading">Moments of Genius</h1>
-			<p class="lead text-muted description">We are a friendly, helpful and social Free Company for Final Fantasy XIV located on the Behemoth server. To us, this game is about the people that you share your journey with. We are chill people who are always down to clown all types of content and always have events going. Weekly raiding? Yep. Mount farming? We do that. FATE chaining? Yup yup. Trivia nights? Of course. Beach parties? You read that right. No matter the week, there is always something going on within MOG. Overall, together we strive to spread positivity throughout the game and help each other grow.</p>
-		</div>
-	</section>
-	<div class="album py-5 bg-light">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/8.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Friends
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/2.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Journey
-							</p>
-						</div>	
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/3.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Community
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/4.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Together
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/5.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Social
-							</p>
-						</div>	
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/6.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Relax
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/7.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Growth
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/1.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Excellence
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<img class="card-img-top" src="assets/images/screenshots/9.png" />
-						<div class="card-body">
-							<p class="card-text text-center">
-								Representative
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<router-outlet></router-outlet>
