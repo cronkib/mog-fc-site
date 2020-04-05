@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FreeCompanyService } from './service/free-company.service';
-import { FreeCompany } from './model/FreeCompany';
+import { FreeCompany } from './model/freecompany/FreeCompany';
 
 @Component({
 	selector: 'app-root',

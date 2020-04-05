@@ -1,3 +1,5 @@
+import { Player } from '../player/Player';
+
 export class Member {
     avatar: string;
     id: number;
@@ -5,4 +7,5 @@ export class Member {
     rank: string;
     rankIcon: string;
     server: string;
+    details: Player;
 }

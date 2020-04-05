@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { FreeCompany } from '../model/FreeCompany';
+import { FreeCompany } from '../model/freecompany/FreeCompany';
 
 @Injectable()
 export class FreeCompanyService {
