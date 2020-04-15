@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MembersComponent } from './members/members.component';
-
+import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
 	{
@@ -18,6 +18,11 @@ const routes: Routes = [
 	{
 		path: "members",
 		component: MembersComponent,
+		pathMatch: "full"
+	},
+	{
+		path: "events",
+		component: EventsComponent,
 		pathMatch: "full"
 	}
 ];

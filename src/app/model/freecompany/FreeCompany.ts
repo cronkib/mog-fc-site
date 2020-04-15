@@ -3,6 +3,7 @@ import { Estate } from './Estate';
 import { Focus } from './Focus';
 import { Ranking } from './Ranking';
 import { Member } from "./Member";
+import { MemberFilters } from '../filter/MemberFilters';
 
 export class FreeCompany {
     active: string;

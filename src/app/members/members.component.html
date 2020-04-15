@@ -1,16 +1,13 @@
 <div class="container members-container">
     <h3 class="members-list-title">Member List</h3>
     <div class="container members-filter-container">
-        <form>
+        <form class="filter-form">
             <div class="row">
-                <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="First name">
+                <div class="col-md-4">
+                    <input type="text" id="name-filter" class="form-control" placeholder="Name" (keypress)="handleFiltering('name', $event)">
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="Last name">
-                </div>
-                <div class="col-md-2">
-                    <select class="form-control">
+                    <select id="rank-filter" class="form-control" (change)="handleFiltering('rank', $event)">
                         <option>All Ranks</option>
                         <option>Chief</option>
                         <option>Officer</option>
@@ -19,54 +16,44 @@
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <select class="form-control">
+                    <select id="job-filter" class="form-control" (change)="handleFiltering('job', $event)">
                         <option>All Jobs</option>
-                        <option>Paladin</option>
-                        <option>Warrior</option>
-                        <option>Dark Knight</option>
-                        <option>Gunbreaker</option>
-                        <option>White Mage</option>
-                        <option>Scholar</option>
-                        <option>Astrologian</option>
-                        <option>Monk</option>
-                        <option>Dragoon</option>
-                        <option>Ninja</option>
-                        <option>Samurai</option>
-                        <option>Bard</option>
-                        <option>Machinist</option>
-                        <option>Black Mage</option>
-                        <option>Summoner</option>
-                        <option>Red Mage</option>
-                        <option>Blue Mage</option>
-                        <option>Alchemist</option>
-                        <option>Armorer</option>
-                        <option>Blacksmith</option>
-                        <option>Carpenter</option>
-                        <option>Culinarian</option>
-                        <option>Goldsmith</option>
-                        <option>Leatherworker</option>
-                        <option>Weaver</option>
-                        <option>Botanist</option>
-                        <option>Fisher</option>
-                        <option>Miner</option>
+                        <option *ngFor="let j of getTanks()">
+                            {{ j }}
+                        </option>
+                        <option *ngFor="let j of getHealers()">
+                            {{ j }}
+                        </option>
+                        <option *ngFor="let j of getDPS()">
+                            {{ j }}
+                        </option>
+                        <option *ngFor="let j of getCrafters()">
+                            {{ j }}
+                        </option>
+                        <option *ngFor="let j of getGatherers()">
+                            {{ j }}
+                        </option>
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <select class="form-control">
+                    <select id="role-filter" class="form-control" (change)="handleFiltering('role', $event)">
                         <option>All Roles</option>
-                        <option>Tank</option>
-                        <option>Healer</option>
-                        <option>DPS</option>
+                        <option *ngFor="let j of getRoles()">
+                            {{ j }}
+                        </option>
                     </select>
                 </div>
                 <div class="col-md-2">
-                    <input type="text" class="form-control" placeholder="Level">
+                    <input type="text" id="level-filter" class="form-control" placeholder="Level" (change)="handleFiltering('level', $event)">
                 </div>
             </div>
         </form>
     </div>
+    <div>
+        <h6 class="member-count">{{ filteredMembers.length }}/{{ freeCompany.freeCompanyMembers.length }}</h6>
+    </div>
     <div id="accordion">
-        <div class="card" *ngFor="let m of freeCompany.freeCompanyMembers">
+        <div class="card" *ngFor="let m of filteredMembers">
             <div class="card-header" id="heading{{ m.id }}">
                 <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' + m.id" aria-expanded="false"
                     [attr.aria-controls]="'collapse' + m.id" (click)="openMember(m)">
@@ -89,7 +76,8 @@
                         <div class="row">
                             <div class="col" *ngIf="selectedMember !== undefined">
                                 <img src='{{ selectedMember.details.playerCharacter.portrait }}'
-                                    width="300" height="409" />
+                                    width="300" height="409" /> <br />
+                                <a href='https://na.finalfantasyxiv.com/lodestone/character/{{ selectedMember.id }}/' target="_blank">View on Lodestone</a>
                             </div>
                             <div class="col">
                                 <h6>DoW / DoM</h6>
@@ -100,8 +88,10 @@
                                             <th>Level</th>
                                         </tr>
                                             <tr *ngFor="let cj of selectedDowDom">
-                                                <td>{{ cj.name }}</td>
-                                                <td>{{ cj.level }}</td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.name }}</span></td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.level }}</span></td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.name }}</td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.level }}</td>
                                             </tr>
                                     </table>
                                 </div>
@@ -115,8 +105,10 @@
                                             <th>Level</th>
                                         </tr>
                                             <tr *ngFor="let cj of selectedDohDol">
-                                                <td>{{ cj.name }}</td>
-                                                <td>{{ cj.level }}</td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.name }}</span></td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.level }}</span></td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.name }}</td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.level }}</td>
                                             </tr>
                                     </table>
                                 </div>

@@ -7,10 +7,12 @@ import { FreeCompanyService } from './service/free-company.service';
 import { HttpClientModule } from "@angular/common/http";
 import { MembersModule } from './members/members.module';
 import { HomeModule } from './home/home.module';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		EventsComponent
 	],
 	imports: [
 		BrowserModule,
