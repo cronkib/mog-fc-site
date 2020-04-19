@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('freecompany-client app is running!');
+    expect(page.getTitleText()).toEqual('mog-fc-site app is running!');
   });
 
   afterEach(async () => {
