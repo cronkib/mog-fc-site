@@ -3,24 +3,22 @@ import { Estate } from './Estate';
 import { Focus } from './Focus';
 import { Ranking } from './Ranking';
 import { Member } from "./Member";
-import { MemberFilters } from '../filter/MemberFilters';
 
 export class FreeCompany {
-    active: string;
-    activeMemberCount: number;
-    dc: string
-    estate?: Estate;
-    focus?: Focus[];
-    grandCompany: string;
-    id: string;
-    name: string;
-    rank: number;
-    ranking?: Ranking;
-    recruitment: string;
-    seeking?: Seeking[];
-    server: string;
-    slogan: string;
-    tag: string;
-    freeCompanyMembers?: Member[];
-    status: string;
+    Active: string;
+    ActiveMemberCount: number;
+    DC: string
+    Estate?: Estate;
+    Focus?: Focus[];
+    GrandCompany: string;
+    ID: string;
+    Name: string;
+    Rank: number;
+    Ranking?: Ranking;
+    Recruitment: string;
+    Seeking?: Seeking[];
+    Server: string;
+    Slogan: string;
+    Tag: string;
+    FreeCompanyMembers?: Member[];
 }

@@ -1,6 +1,9 @@
+import { UnlockedState } from './UnlockedState';
+
 export class ClassJob {
-    classId: number;
-    name: string;
-    level: number;
-    jobType: string;
+    ClassID: number;
+    Name: string;
+    Level: number;
+    JobID: number;
+    UnlockedState: UnlockedState;
 }

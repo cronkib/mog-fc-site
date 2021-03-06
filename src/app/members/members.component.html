@@ -10,6 +10,7 @@
                     <select id="rank-filter" class="form-control" (change)="handleFiltering('rank', $event)">
                         <option>All Ranks</option>
                         <option>Chief</option>
+                        <option>Chief Alt</option>
                         <option>Officer</option>
                         <option>Officer Alt</option>
                         <option>Veteran</option>
@@ -51,34 +52,34 @@
         </form>
     </div>
     <div>
-        <h6 class="member-count">{{ filteredMembers.length }}/{{ freeCompany.freeCompanyMembers.length }}</h6>
+        <h6 class="member-count">{{ filteredMembers.length }}/{{ this.freeCompanyMembers.length }}</h6>
     </div>
     <div id="accordion">
         <div class="card" *ngFor="let m of filteredMembers">
-            <div class="card-header" id="heading{{ m.id }}">
-                <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' + m.id" aria-expanded="false"
-                    [attr.aria-controls]="'collapse' + m.id" (click)="openMember(m)">
+            <div class="card-header" id="heading{{ m.ID }}">
+                <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' + m.ID" aria-expanded="false"
+                    [attr.aria-controls]="'collapse' + m.ID" (click)="openMember(m)">
                     <div class="container">
                         <div class="row">
-                            <div class="col"><img src='{{ m.avatar }}' width="48" height="48" />
+                            <div class="col"><img src='{{ m.Avatar }}' width="48" height="48" />
                             </div>
                             <div class="col">
-                                <h5>{{ m.name }}</h5>
+                                <h5>{{ m.Name }}</h5>
                             </div>
-                            <div class="col"><img src='{{ m.rankIcon }}' />
-                                {{ m.rank }}</div>
+                            <div class="col"><img src='{{ m.RankIcon }}' />
+                                {{ m.Rank }}</div>
                         </div>
                     </div>
                 </button>
             </div>
-            <div id="collapse{{ m.id }}" class="collapse hide" [attr.aria-labelledby]="'heading' + m.id" data-parent="#accordion">
+            <div id="collapse{{ m.ID }}" class="collapse hide" [attr.aria-labelledby]="'heading' + m.ID" data-parent="#accordion">
                 <div class="card-body">
                     <div class="container">
                         <div class="row">
                             <div class="col" *ngIf="selectedMember !== undefined">
-                                <img src='{{ selectedMember.details.playerCharacter.portrait }}'
+                                <img src='{{ selectedMember.Character.Portrait }}'
                                     width="300" height="409" /> <br />
-                                <a href='https://na.finalfantasyxiv.com/lodestone/character/{{ selectedMember.id }}/' target="_blank">View on Lodestone</a>
+                                <a href='https://na.finalfantasyxiv.com/lodestone/character/{{ selectedMember.Character.ID }}/' target="_blank">View on Lodestone</a>
                             </div>
                             <div class="col">
                                 <h6>DoW / DoM</h6>
@@ -88,12 +89,12 @@
                                             <th>Name</th>
                                             <th>Level</th>
                                         </tr>
-                                            <tr *ngFor="let cj of selectedDowDom">
-                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.name }}</span></td>
-                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.level }}</span></td>
-                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.name }}</td>
-                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.level }}</td>
-                                            </tr>
+                                        <tr *ngFor="let cj of selectedDowDom">
+                                            <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.UnlockedState.Name }}</span></td>
+                                            <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.Level }}</span></td>
+                                            <td *ngIf="!isFilterableJob(cj)">{{ cj.UnlockedState.Name }}</td>
+                                            <td *ngIf="!isFilterableJob(cj)">{{ cj.Level }}</td>
+                                        </tr>
                                     </table>
                                 </div>
                             </div>
@@ -106,10 +107,10 @@
                                             <th>Level</th>
                                         </tr>
                                             <tr *ngFor="let cj of selectedDohDol">
-                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.name }}</span></td>
-                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.level }}</span></td>
-                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.name }}</td>
-                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.level }}</td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.UnlockedState.Name }}</span></td>
+                                                <td *ngIf="isFilterableJob(cj)"><span class="filtered-job">{{ cj.Level }}</span></td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.UnlockedState.Name }}</td>
+                                                <td *ngIf="!isFilterableJob(cj)">{{ cj.Level }}</td>
                                             </tr>
                                     </table>
                                 </div>

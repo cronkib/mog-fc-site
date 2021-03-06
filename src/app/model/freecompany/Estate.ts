@@ -1,5 +1,5 @@
 export class Estate {
-    name: string;
-    greeting: string;
-    plot: string;
+    Name: string;
+    Greeting: string;
+    Plot: string;
 }

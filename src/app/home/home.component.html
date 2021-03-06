@@ -1,7 +1,7 @@
 <div class="container-flex jumbo-content-area">
 	<section class="jumbotron text-center">
 		<div class="container">
-			<h1 class="jumbotron-heading">{{ freeCompany.name || 'Moments of Genius' }}</h1>
+			<h1 class="jumbotron-heading">{{ freeCompany.Name || 'Moments of Genius' }}</h1>
 			<p class="lead text-muted description">We are a friendly, helpful and social Free Company for Final Fantasy
 				XIV located on the Behemoth server. To us, this game is about the people that you share your journey
 				with. We are a relaxed community that is interested in all types of content and always have events
@@ -118,15 +118,15 @@
 			<div class="col-md-4">
 				<h3>Focus</h3>
 				<ul class="list-group">
-					<li *ngFor="let r of freeCompany.focus" class="list-group-item">
-						<img src='{{ r.icon }}' /> &nbsp; {{ r.name }}
+					<li *ngFor="let r of getActiveFocus()" class="list-group-item">
+						<img src='{{ r.Icon }}' /> &nbsp; {{ r.Name }}
 				</ul>
 			</div>
 			<div class="col-md-4">
 				<h3>Seeking</h3>
 				<ul class="list-group">
-					<li *ngFor="let r of freeCompany.seeking" class="list-group-item">
-						<img src='{{ r.icon }}' /> &nbsp; {{ r.name }}
+					<li *ngFor="let r of getActiveSeeking()" class="list-group-item">
+						<img src='{{ r.Icon }}' /> &nbsp; {{ r.Name }}
 					</li>
 				</ul>
 			</div>
@@ -134,15 +134,15 @@
 				<h3>Estate</h3>
 				<ul class="list-group">
 					<li class="list-group-item">
-						<span class="estate-name">{{ freeCompany.estate?.name || '' }}</span> <br /> <br />
-						<span class="estate-greeting">{{ freeCompany.estate?.greeting || '' }}</span> <br /> <br />
-						<span class="estate-plot">{{ freeCompany.estate?.plot || '' }}</span>
+						<span class="estate-name">{{ freeCompany.Estate?.Name || '' }}</span> <br /> <br />
+						<span class="estate-greeting">{{ freeCompany.Estate?.Greeting || '' }}</span> <br /> <br />
+						<span class="estate-plot">{{ freeCompany.Estate?.Plot || '' }}</span>
 					</li>
 				</ul>
 				<h3 class='recruitment-title'>Recruitment</h3>
 				<ul class="list-group">
 					<li class="list-group-item">
-						<span class="recruitment text-align">{{ freeCompany.recruitment }}</span>
+						<span class="recruitment text-align">{{ freeCompany.Recruitment }}</span>
 					</li>
 				</ul>
 			</div>

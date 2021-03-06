@@ -1,5 +1,5 @@
 export class Focus {
-    icon: string;
-    name: string;
-    status: string;
+    Icon: string;
+    Name: string;
+    Status: boolean;
 }
