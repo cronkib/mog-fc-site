@@ -1,4 +1,4 @@
 export class Ranking {
-    monthly: string;
-    weekly: string;
+    Monthly: number;
+    Weekly: number;
 }

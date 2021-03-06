@@ -1,8 +1,8 @@
 export class Jobs {
     public static ROLES = ["Tank", "Healer", "DPS", "Crafter", "Gatherer"];
-    public static TANK = ["Paladin", "Warrior", "Dark knight", "Gunbreaker"];
-    public static HEALER = ["White mage", "Scholar", "Astrologian"];
-    public static DPS = ["Monk", "Dragoon", "Ninja", "Samurai", "Bard", "Machinist", "Black mage", "Summoner", "Red mage", "Blue mage"];
+    public static TANK = ["Paladin", "Warrior", "Dark Knight", "Gunbreaker"];
+    public static HEALER = ["White Mage", "Scholar", "Astrologian"];
+    public static DPS = ["Monk", "Dragoon", "Ninja", "Samurai", "Bard", "Machinist", "Black Mage", "Summoner", "Red mage", "Blue Mage (Limited Job)"];
     public static CRAFTER = ["Alchemist", "Armorer", "Blacksmith", "Carpenter", "Culinarian", "Goldsmith", "Leatherworker", "Weaver"];
     public static GATHERER = ["Botanist", "Fisher", "Miner"];
 

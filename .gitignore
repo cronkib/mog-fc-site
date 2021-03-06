@@ -45,3 +45,7 @@ testem.log
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Scripts
+/scripts/logs
+/scripts/output

@@ -16,9 +16,14 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.freecompanyService.fetchFreeCompanyData();
-		this.freecompanyService.getFreeCompanyData().subscribe((company: FreeCompany) => {
-			this.freeCompany = company;
-		});
+		this.freeCompany = this.freecompanyService.getFreeCompanyData();
+	}
+
+	public getActiveFocus() {
+		return this.freeCompany.Focus.filter( f => f.Status )
+	}
+
+	public getActiveSeeking() {
+		return this.freeCompany.Seeking.filter( s => s.Status )
 	}
 }

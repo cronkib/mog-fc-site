@@ -1,5 +1,5 @@
 export class Seeking {
-    name: string;
-    icon: string;
-    status: string;
+    Name: string;
+    Icon: string;
+    Status: boolean;
 }

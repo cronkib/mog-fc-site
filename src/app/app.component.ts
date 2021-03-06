@@ -16,9 +16,5 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.freecompanyService.fetchFreeCompanyData();
-		this.freecompanyService.getFreeCompanyData().subscribe((company: FreeCompany) => {
-			this.freeCompany = company;
-		})
 	}
 }
