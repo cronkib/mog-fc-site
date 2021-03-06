@@ -195,7 +195,7 @@ class UpdateJob
     end
 
     def write_json(data)
-        Dir.mkdir(@output_dir) unless Dir.exists? @output_file
+        Dir.mkdir(@output_dir) unless Dir.exists? @output_dir
         File.open("#{@output_dir}/#{@output_file}", "w") do |file|
             file.write(JSON.pretty_generate(data))
         end
